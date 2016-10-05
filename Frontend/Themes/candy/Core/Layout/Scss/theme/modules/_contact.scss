@@ -1,0 +1,150 @@
+//
+// Contact
+//
+
+// maps
+
+.parseMap {
+	width: 100%;
+	height: 400px;
+}
+
+.parseMapDisplay {
+	z-index: -99999;
+}
+
+.overlay2 {
+   background:transparent; 
+   position:relative; 
+   width:100%;
+   height:400px; /* your iframe height */
+   top:400px;  /* your iframe height */
+   margin-top:-400px;  /* your iframe height */
+}
+
+.contact-click {
+	@include px-margin-lr(4,4);
+	border: 2px solid $beta-ui-color;
+	@include padding-tb(1,1);
+	cursor: pointer;
+	text-align: center;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	color: $beta-ui-color;
+
+	@include mq($bp6){
+		@include px-margin-lr(0,0);
+	}
+	
+	a {
+		color: $beta-ui-color;
+	}
+
+
+	img {
+		height: 75px;
+		margin-bottom: .5em;
+	}
+
+	p {	
+		font-weight: $delta-font-weight;
+		font-size: 1.2em;
+	}
+}
+
+.contact-click:first-child, .contact-click:nth-child(2) {
+	@include mq($bp2){
+		@include margin-tb(0,.75);
+	}
+}
+
+
+
+
+.contact-click:hover {
+	background-color: $beta-ui-color;
+ 	color: $gamma-ui-color;
+
+ 	a {
+		color: $gamma-ui-color;
+	}
+}
+
+
+
+// CONTACT FORM
+
+.contact-form {
+
+	.grid-item {
+		width: 98%;
+	}
+
+ 	.grid-item:nth-child(3) , .grid-item:nth-child(4) {
+		width: 48%;
+
+		@include mq($bp3)
+		{
+			width: 98%;
+		}
+	}
+
+	input[type="text"], input[type="email"], textarea {
+		border: 1px solid $line-color;
+		width: 100%;
+	}
+
+	input[type="text"], input[type="email"] {
+		height: 60px;
+	}
+
+	textarea {
+		padding-top: 10px;
+		height: 200px;
+	}
+
+	.cta-button {
+		font-size: 1.2em;
+		@include px-padding-lr(8,8);
+		height: 60px;
+		line-height: 30px;
+
+		@include mq($bp2){
+			@include px-padding-lr(4,4);
+		}
+	}
+}
+
+.contact-success {
+	// margin-left: 25%;
+	// width: 50%;
+
+	header {
+		@include padding-tb(.5,.5);
+		background-color: $beta-ui-color;
+
+		img {
+			height: 30px;
+		}
+	}
+}
+
+.contact-success-content {
+	border: 1px solid $line-color;
+	@include padding-tb(1,1);
+	@include px-padding-lr(4,4);
+
+	p:last-child {
+		margin-top: 1em;
+	}
+
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,140 @@
+//
+// Forms
+// ---
+// Default markup for the form elements, based on the settings file.
+//
+
+// GENERAL
+
+form {
+	padding: 0 0 em(14);
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+
+	p:last-child {
+		position: relative;
+		width: 100%;
+	}
+}
+
+legend,
+label {
+	display: block;
+	width: 100%;
+	cursor: pointer;
+	@include baseline-dimensions(0,3,1);
+}
+
+// Input elements
+
+input[type="input"],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[name="field_country_code"],
+input[name="field_city_code"],
+input[name="field_phone_int"],
+select[multiple],
+textarea {
+	-webkit-appearance: none;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	// color: $alpha-text-color;
+	font-family: $alpha-font-family;
+	// margin: 0;
+	// border: 1px solid $beta-ui-color;
+	// @include border-box;
+	// @include input-s;
+	// @include margin-tb(0,0.5);
+
+	&:focus {
+		// color: $beta-text-color;
+		// outline-color: $beta-ui-color;
+	}
+
+	@include mq($bp3) {
+		@include input-m;
+	}
+
+	@include mq($bp5) {
+		@include input-l;
+	}
+}
+
+input[type="text"], input[type="email"] {
+	height: 40px;
+	padding-left: 10px;
+	font-size: 1em !important;
+}
+
+textarea {
+	height: 150px;
+	padding-left: 10px;
+	font-size: 1em !important;
+	font-family: $alpha-font-family;
+}
+
+// Placeholders
+
+::-webkit-input-placeholder {
+	font-style: italic;
+}
+
+::-moz-placeholder {
+	font-style: italic;
+}
+
+:-ms-input-placeholder {
+	font-style: italic;
+}
+
+
+
+//
+// link buttons
+//
+
+.cta-button {
+	cursor: pointer;
+	background-color: $beta-ui-color;
+	font-size: 1em;
+	color: $gamma-ui-color;
+	font-weight: $gamma-font-weight;
+	border: 0;
+	margin-top: 1px;
+	height:38px;
+	line-height: 20px;
+	@include px-padding-lr(2,2);
+	@include padding-tb(.4,.4);
+	border: 1px solid transparent;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+	
+ 
+
+.cta-button:hover {
+  background-color: #ffffff;
+  color: $beta-ui-color;
+  border-color: $beta-ui-color;
+}
+
+
+
+
+
+

@@ -4,6 +4,9 @@
 {% include "Core/Layout/Templates/Cookies.html.twig" %}
 
 <div id="topWrapper">
+
+  {# HEADER #}
+
   <header id="header" {% if page.data.image %}style="background-image:url({{ FRONTEND_FILES_URL~'/pages/images/source/'~page.data.image }})" {% endif %}>
     <div class="container">
 
@@ -27,18 +30,20 @@
 
   </header>
 
-  <div id="carousel">
 
-    {# Carousel #}
-    {% for Carousel in positions.Carousel %}
-      {% if Carousel.html %}
-        {{ Carousel.html|raw }}
-      {% endif %}
-    {% endfor %}
-
-  </div>
+  {# MAIN CONTENT #}
 
   <div id="main">
+
+    {# Carousel #}  
+    <div id="carousel">
+      {% for Carousel in positions.Carousel %}
+        {% if Carousel.html %}
+          {{ Carousel.html|raw }}
+        {% endif %}
+      {% endfor %}
+    </div>
+
     <div class="container">
 
       {# Main column #}
@@ -67,6 +72,10 @@
     </div>
   </noscript>
 </div>
+
+
+{# FOOTER #}
+
 <div id="bottomWrapper">
   {% include "Core/Layout/Templates/Footer.html.twig" %}
 </div>
@@ -77,7 +86,10 @@
 {% endfor %}
 
 {# Theme specific Javascript #}
-<script src="{{ THEME_URL }}/Core/Js/triton.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="{{ THEME_URL }}/Core/Js/min/parallax-min.js"></script>
+<script src="{{ THEME_URL }}/Core/Js/min/uikit-min.js"></script>
+<script src="{{ THEME_URL }}/Core/Js/min/theme-min.js"></script>
 
 {# Site wide HTML #}
 {{ siteHTMLFooter|raw }}

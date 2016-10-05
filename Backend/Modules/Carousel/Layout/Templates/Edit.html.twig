@@ -72,7 +72,7 @@
                     <div class="panel-body">
                       {% if item.main_image %}
                         <div>
-                          <img src="{{ FRONTEND_FILES_URL }}/Carousel/images/300x300/{{ item.main_image }}" class="img-thumbnail" width="300" height="300" alt="{{ 'lbl.MainImage'|trans|ucfirst }}" />
+                          <img src="{{ FRONTEND_FILES_URL }}/Carousel/main_image/300x300/{{ item.main_image }}" class="img-thumbnail" width="300" height="300" alt="{{ 'lbl.MainImage'|trans|ucfirst }}" />
                         </div>
                         <ul class="list-unstyled">
                           {# <li class="checkbox">
@@ -92,7 +92,7 @@
                     <div class="panel-body">
                       {% if item.parallax_image %}
                         <div>
-                          <img src="{{ FRONTEND_FILES_URL }}/Carousel/images/300x300/{{ item.parallax_image }}" class="img-thumbnail" width="300" height="300" alt="{{ 'lbl.ParallaxImage'|trans|ucfirst }}" />
+                          <img src="{{ FRONTEND_FILES_URL }}/Carousel/parallax_image/300x300/{{ item.parallax_image }}" class="img-thumbnail" width="300" height="300" alt="{{ 'lbl.ParallaxImage'|trans|ucfirst }}" />
                         </div>
                         <ul class="list-unstyled">
                         {#   <li class="checkbox">
@@ -105,10 +105,8 @@
                     </div>
                   </div>
 
-
-               
-               
-              <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
                 
                 <div class="panel panel-default">
                   <div class="panel-heading">
@@ -123,7 +121,6 @@
                   </div>
                 </div>
               </div>
-            </div>
           </div>
 
         </div>
@@ -142,9 +139,7 @@
           {% endif %}
         </div>
         <div class="btn-group pull-right" role="group">
-          <a href="#" id="saveAsDraft" class="btn btn-default">
-            <span class="fa fa-file-o"></span>{{ 'lbl.SaveDraft'|trans|ucfirst }}
-          </a>
+         
           <button id="editButton" type="submit" name="edit" class="btn btn-primary">
             <span class="fa fa-check"></span>{{ 'lbl.Publish'|trans|ucfirst }}
           </button>
