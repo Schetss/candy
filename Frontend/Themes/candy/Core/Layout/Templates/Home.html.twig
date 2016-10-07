@@ -12,17 +12,11 @@
 
       {# Logo #}
       <div id="logo">
-        <h2><a href="/">{{ siteTitle }}</a></h2>
-      </div>
-
-      {# Skip link #}
-      <div id="skip">
-        <p><a href="#main">{{ 'lbl.SkipToContent'|trans|ucfirst }}</a></p>
+        <a href="/"><img src="{{ SITE_URL }}/src/Frontend/Themes/candy/Core/Layout/images/logo.svg" alt="{{ siteTitle }}"></a>
       </div>
 
       {# Navigation #}
-      <nav id="headerNavigation">
-        <h4>{{ 'lbl.MainNavigation'|trans|ucfirst }}</h4>
+      <nav id="main-nav">
         {{ getnavigation('page', 0, 1) }}
       </nav>
 
@@ -48,6 +42,35 @@
 
       {# Main column #}
       <div class="col col-12 lastCol">
+
+        {# Deel 1 #}
+        {% for Deel1 in positions.Deel1 %}
+          {% if Deel1.html %}
+            {{ Deel1.html|raw }}
+          {% endif %}
+        {% endfor %}
+
+        {# Intro 1 #}
+        {% for Intro1 in positions.Intro1 %}
+          {% if Intro1.html %}
+            {{ Intro1.html|raw }}
+          {% endif %}
+        {% endfor %}
+
+        {# Intro 2 #}
+        {% for Intro2 in positions.Intro2 %}
+          {% if Intro2.html %}
+            {{ Intro2.html|raw }}
+          {% endif %}
+        {% endfor %}
+
+        {# Intro 3 #}
+        {% for Intro3 in positions.Intro3 %}
+          {% if Intro3.html %}
+            {{ Intro3.html|raw }}
+          {% endif %}
+        {% endfor %}
+
 
         {# Main positions #}
         {% for main in positions.main %}

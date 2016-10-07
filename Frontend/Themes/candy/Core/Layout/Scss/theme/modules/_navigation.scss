@@ -19,7 +19,6 @@
 	li:last-child {
 		margin-right: 0;
 	}
-
 }
 
 
@@ -105,76 +104,71 @@
 }
 
 
-// TOPNAVIGATION
-
-.top-nav {
-	@include margin-tb(.45,0);
-	font-weight: $gamma-font-weight;
-	font-size: 1em;
-
-	li {
-		float: left; 
-		margin-right: .7em;
-	}
-
-	li:last-child {
-		margin-right: 0;
-	}	
-
-	a {
-		@include px-padding-lr(1.2,1.2);
-		@include padding-tb(.3,.3);
-		color: $alpha-text-color;
-	  	-webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
-	}
-
-	a:hover, a:active, .selected a {
-	 	color: $gamma-ui-color;
-	 	background-color: $beta-ui-color;
-	}
-}
-
-
-
 // MAIN NAV
 
-.main-nav {	
-	font-size: 1em;
+#main-nav {	
+	font-family: $beta-font-family;
+	font-weight: $beta-font-weight;
+	float: right;
+	margin-top: 10px;
 
-	li:first-child {
-		display: none;
-	}
-	
-	li {
-		margin: 0;
-	}
-
-
-	a, a:visited {
-		color: $gamma-ui-color;
-		@include padding-tb(.52,.5);
-		@include px-padding-lr(1.2,1.2);
-		-webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
+	.sm-img {
+		width: 27px;
+		margin-left: .75em;
 	}
 
-	a:hover, a:active, .selected a {
-		background-color: $beta-ui-color;
-		-webkit-transition: all 0.3s ease-in-out;
-		-moz-transition: all 0.3s ease-in-out;
-		transition: all 0.3s ease-in-out;
+	.main-nav-text {
+
+		a, a:visited {
+			color: $delta-text-color;
+			@include padding-tb(.22,.2);
+			@include px-padding-lr(1.2,1.2);
+			-webkit-transition: all 0.3s ease-in-out;
+			-moz-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+			border-radius: $radius;
+		}
+
+		a:hover, a:active, .selected a {
+			background-color: $beta-ui-color;
+			-webkit-transition: all 0.3s ease-in-out;
+			-moz-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+		}
+	}
+
+	.main-nav-text:nth-child(3) {
+		a, a:visited {
+			@include px-margin-lr(0,1);
+		}
 	}
 }
 
-.header-subnav {
-	@include mq($bp3){
-		display: none;
-	}
+
+// 
+// Social Media
+//
+
+.sm-fb, .sm-tw {
+	 fill: $delta-text-color; 
+	 -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
+.sm-fb:hover {
+	fill: #3b5998;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.sm-tw:hover {
+	fill: #0084b4;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
 
 
 //

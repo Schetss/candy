@@ -12,7 +12,8 @@ $show-baseline-grid: false; // toggle the visibility of the baseline (true/false
 $baseline-holder: holder; // set the classname of the element which will show the baseline
 $grid-color: rgba(#000,0.1); // set the baseline grid color and opacity
 
-$alpha-font-family	: "proxima-nova",sans-serif;
+$alpha-font-family	: 'Gentium Basic', serif;
+$beta-font-family 	: 'Open Sans', sans-serif;
 
 $alpha-line-height	: 1.5; // em-value
 $alpha-baseline-grid: 7; // pixel-value
@@ -20,10 +21,9 @@ $alpha-leading		: 1; // multiplier
 
 $alpha-font-size	: 16; // pixel-value
 
-$alpha-font-weight	: 300;
-$beta-font-weight	: 400;
-$gamma-font-weight	: 700;
-$delta-font-weight	: 900;
+$alpha-font-weight	: 400;
+$beta-font-weight	: 700;
+$gamma-font-weight	: 800;
 
 
 // Grid
@@ -84,20 +84,22 @@ $highlight		: 0%; // Range: 0-100%
 
 // Colors
 
-$alpha-ui-color		: #223CA3; // DARK BLUE
-$beta-ui-color		: #1D73FB; // LIGHT BLUE
-$gamma-ui-color		: #FDFFFF; // WHITE
+$alpha-ui-color		: #81c2dc; // BLUE
+$beta-ui-color		: #cf5f7a; // PINK
+$gamma-ui-color		: #e5cea5; // BEIGE
 
-$line-color			: #d1d3d4; // light light grey
+$line-color			: #f7f7f0; // BEIGE - WHITE
 $error-color 		: red;
 $success-color 		: green;
 $notice-color 		: yellow;
 
 // Tekst
 
-$alpha-text-color	: #231F20; // Dark grey
-$beta-text-color	: #6D6E71; // Light grey
-$delta-text-color	: #52504F; // mid grey
+$alpha-text-color	: #1e1e1e; // Dark grey
+$beta-text-color	: #3f3f3f; // Light grey
+$delta-text-color	: #f9f9f7; // White
+
+$bg-color			: $delta-text-color;
 
 
 // Links

@@ -1,1 +1,1 @@
-var scene=document.getElementById("scene"),parallax=new Parallax(scene);
+var scene=document.getElementById("scene"),parallax=new Parallax(scene),MoveItItem=function(e){this.el=$(e),this.speed=parseInt(this.el.attr("data-scroll-speed"))};$.fn.moveIt=function(){var e=$(window),t=[];$(this).each(function(){t.push(new MoveItItem($(this)))}),window.onscroll=function(){var n=e.scrollTop();t.forEach(function(e){e.update(n)})}},MoveItItem.prototype.update=function(e){var t=e/this.speed;this.el.css("transform","translateY("+t+"px)")},$(function(){$("[data-scroll-speed]").moveIt()});

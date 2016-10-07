@@ -2,73 +2,22 @@
 // Carousel
 //
 
-// Widget home page (image carousel)
-
-// .hr-shadow {
-// 	position: absolute;
-// 	bottom: 0;
-// 	z-index: 100;
-// 	width: 100%;
-//     border: 0;
-//     height: 30px;
-//     margin-bottom: 0;
-//     z-index: 0;
-//     box-shadow: inset 0 -30px 30px -30px rgba(0, 0, 0, 0.91);
-// }
-
-
-// .searchSmall{
-// 	margin-top: -170px;
-// 	position: relative;
-// 	overflow: hidden;
-// 	width: 100%;
-// 	@include background-opacity($beta-ui-color, 0.2);
-
-// 	@include mq($bp2){
-// 		@include background-opacity($beta-ui-color, 0.4);
-// 	}
-
-// 	.imageCarousel {
-// 		img {
-// 			opacity: 0;
-// 		}
-// 	}
-
-// 	.loaded {
-// 		img {
-// 			opacity: 1;
-// 			-webkit-transition: .5s;
-// 			transition: .5s;
-// 		}
-// 	}
-// }
 
 #carousel {
-	// position: relative;
-	// z-index: -999;
+	position: relative;
 	width: 100%;
-	height: 80%;
+	height: 100%;
 	overflow: hidden;
 }
 
 .carousel-item {
- 	  // align-items: center;
-    // // height: 100%;
-    // // width: 100%;
-    
-
-
+  position: relative;
     img {
-    //   position: absolute;
     	width: 100%;
-    // 	bottom: 0;
-		  // object-fit: contain;
     }
 
     ul {
-
       li:first-child{
-
         img {
           margin-left: -10%;
           margin-top: -10%;
@@ -78,6 +27,72 @@
     }
 }
 
+
+.carousel-img {
+
+}
+
+.carousel-text {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: $delta-text-color;
+
+
+  h1 {
+     color: $delta-text-color;
+     @include margin-tb(0,.5);
+  }
+
+  p {
+    font-size: 1.44em;
+    @include px-padding-lr(10,10);
+  }
+
+  a {
+    font-size: .65em;
+    font-family: $beta-font-family;
+    background-color: $beta-ui-color;
+    color: $delta-text-color;
+    font-weight: $beta-font-weight;
+    cursor: pointer;
+    border-radius: 30px;
+    border: 0;
+    @include px-padding-lr(3,3);
+    @include padding-tb(.5,.55);
+    border: 1px solid transparent;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+  a:hover {
+    background-color: transparent;
+    // color: $beta-ui-color;
+    border-color: $delta-text-color;
+  }
+
+
+}
+
+
+.carousel-overlay {
+  @include background-opacity(darken($alpha-ui-color,15), .5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+hr.style-four {
+    height: 30px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
 
 .slideShowImg{
 	opacity: 0;

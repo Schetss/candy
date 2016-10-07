@@ -1,15 +1,21 @@
  {% if carousel %}
     {% for carousel in carousel %}        
         <div class="carousel-item">
+          <div class="carousel-img">
             <ul id="scene">
               <li class="layer" data-depth="0.30"><img src="http://{{ SITE_DOMAIN }}/src/Frontend/Files/Carousel/main_image/3000x2500/{{ carousel.mainimg }}" alt="{{ carousel.title }}"></li>
               <li class="layer" data-depth="0.00"><img src="http://{{ SITE_DOMAIN }}/src/Frontend/Files/Carousel/parallax_image/3000x2500/{{ carousel.parallaximg }}"></li>
              
             </ul>
+            <div class="carousel-overlay">
+            </div>
+          </div>
+       </div>    
+       <div class="carousel-text wrapper-inner">
+          {{ carousel.content|raw }}
+       </div>             
+       <hr class="bottom-line">
 
-           {#  <h3>{ {carousel.title }}</h3>  
-           {{ carousel.content|raw }} #}
-       </div>                 
     {% endfor %}
 {% endif %}
 
