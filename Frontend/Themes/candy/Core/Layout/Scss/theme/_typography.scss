@@ -23,20 +23,27 @@ h1 {
 }
 
 h2 {
-	font-weight: $gamma-font-weight;
-	font-size: 2.488em;
+	font-style: italic;
+	font-weight: $beta-font-weight;
+	font-size: 1.728em;
+	text-align: center;
 	// @include baseline-dimensions(2,3,3);
 }
 
 h3 {
 	font-weight: $beta-font-weight;
-	font-size: 2.488em;
+	font-size: 1em;
+	text-transform: uppercase;
+	color: lighten($alpha-text-color,15);
 	// @include baseline-dimensions(2,3,3);
 }
 
 h4 {
 	font-weight: $beta-font-weight;
-	font-size: 1.728em;
+	font-size: 1.22em;
+	text-transform: uppercase;
+	text-align: center;
+	color: lighten($alpha-text-color,15);
 	// @include baseline-dimensions(1,3,1);
 }
 
@@ -51,6 +58,23 @@ h6 {
 	font-size: 1.22em;
 	// @include baseline-dimensions(1,3,1);
 }
+
+
+//
+// Menu Tag
+//
+
+.menu-tag {
+	p {
+		font-size: .8em;
+		text-align: center;
+		font-weight: $gamma-font-weight;
+		text-transform: uppercase;
+		color: $alpha-ui-color;
+		font-family: $beta-font-family;
+	}
+}
+
 
 //
 // REGULAR TEXT

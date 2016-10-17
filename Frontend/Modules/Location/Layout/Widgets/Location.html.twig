@@ -6,8 +6,13 @@
 
 {% if widgetLocationItem %}
   {# @remark: do not remove the parseMap-class, it is used by JS #}
-  <div id="map{{ widgetLocationItem.id }}" class="parseMap" style="height: {{ widgetLocationSettings.height }}px; width: {{ widgetLocationSettings.width }}px;"></div>
+  <div class="maps-holder">
+    <div class="maps-overlay" onClick="style.pointerEvents='none'"></div>
+    <div id="map{{ widgetLocationItem.id }}" class="parseMap parseMapDisplay">
 
+    </div>
+    <hr class="bottom-line">
+  </div>
   {% if widgetLocationSettings.directions %}
     <aside id="locationSearch{{ widgetLocationItem.id }}" class="locationSearch">
       <form method="get" action="#">
@@ -31,9 +36,15 @@
   {% endif %}
 
   <div id="markerText{{ widgetLocationItem.id }}" style="display: none;">
+     <a href="/"><img src="{{ SITE_URL }}/src/Frontend/Themes/candy/Core/Layout/images/popkorn_2.svg" alt="{{ siteTitle }}"></a>
     <address>
       {{ widgetLocationItem.street }} {{ widgetLocationItem.number }}<br />
       {{ widgetLocationItem.zip }} {{ widgetLocationItem.city }}
     </address>
+   {#  <p>
+      T <a href="#">+32 4760 32 46</a><br />
+      E <a href="#">info@popkorn.be</a>
+    </p> #}
   </div>
+
 {% endif %}

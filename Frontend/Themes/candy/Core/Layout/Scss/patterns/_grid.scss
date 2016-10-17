@@ -2,13 +2,13 @@
 // WRAPPER
 //
 
-.wrapper {
+.container {
   padding: 0;
   @extend %clearfix;
   width: 100%;
 }
 
-.wrapper-inner {
+.container-inner {
 	// overflow: hidden;
 	@extend %clearfix;
 	margin: 0 auto;
@@ -27,7 +27,7 @@
 		@include px-padding-lr(1,1);
 	}
 
-	.wrapper-inner {
+	.container-inner {
 		@include px-padding-lr(0,0);
 
 		@include mq($bp2){

@@ -41,3 +41,34 @@ $(function(){
 });
 
 
+
+
+//
+// Gallery Slider
+//
+$(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+ 
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+ 
+      items : 4,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3]
+ 
+  });
+ 
+});
+
+
+//
+// Remove overlay on contact
+//
+
+
+$(".maps-overlay").click(function(){
+    $(".parseMap").removeClass("parseMapDisplay");
+});
+
+
+

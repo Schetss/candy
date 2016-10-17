@@ -1,0 +1,22 @@
+ {% if overview %}
+    <div class="overview-holder">
+        {% for overview in overview %}        
+            <div class="grid-item grid-l-1-3">
+            	<div class="overview-item">
+            		<div class="overview-item-top">
+    	        		<img class="overview-item-thumbnail" alt="{{ overview.title }}" src="http://{{ SITE_DOMAIN }}/src/Frontend/Files/Overview/image/800x800/{{ overview.img }}">
+    	        		<div class="overview-item-cta">
+    	        			<a href="mailto:stijn@popkorn.be"><img alt="mail" src="http://{{ SITE_DOMAIN }}/src/Frontend/Themes/candy/Core/Layout/images/mail.svg"></a>
+    	        		</div>
+    	        	</div>
+            		<div class="overview-item-bottom">
+            			<h4>{{ overview.title }}</h4>
+            			<p class="overview-subtitle">{{ overview.subtitle }}</p>
+            			{{ overview.content|raw }}
+            		</div>
+            	</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+    

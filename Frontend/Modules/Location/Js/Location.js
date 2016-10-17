@@ -80,15 +80,31 @@ jsFrontend.location =
 	addMarker: function(mapId, id, lat, lng, title)
 	{
 		// add the marker
-		var marker = new google.maps.Marker(
-			{
-				position: new google.maps.LatLng(lat, lng),
-				map: jsFrontend.location.map[mapId],
-				title: title,
-				locationId: id
-			}
-		);
+		// var marker = new google.maps.Marker(
+		// 	{
+		// 		position: new google.maps.LatLng(lat, lng),
+		// 		map: jsFrontend.location.map[mapId],
+		// 	 	// icon: iconBase + 'http://candy:8888/src/Frontend/Themes/candy/Core/Layout/images/maps_icon.png',
+		// 		title: title,
+		// 		locationId: id
+		// 	}
+		// );
 
+
+		var iconBase = 'http://candy:8888/src/Frontend/Themes/candy/Core/Layout/images/';
+		  var marker = new google.maps.Marker({
+		    position: new google.maps.LatLng(lat, lng),
+		   	map: jsFrontend.location.map[mapId],
+		    icon: iconBase + 'maps_icon.png',
+		    title: title,
+			locationId: id
+		  });
+
+
+
+		// show info from start
+
+	
 		// show info window on click
 		google.maps.event.addListener(marker, 'click', function()
 		{
@@ -97,7 +113,7 @@ jsFrontend.location =
 			// apparently JS goes bananas with multi line HTMl, so we grab it from the div, this seems like a good idea for SEO
 			if($markerText.length > 0) text = $markerText.html();
 
-			var content = '<h1>' + title + '</h1>';
+			var content = '';
 			if(typeof text != 'undefined') content += text;
 
 			new google.maps.InfoWindow(

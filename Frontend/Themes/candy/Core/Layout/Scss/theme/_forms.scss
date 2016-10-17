@@ -73,18 +73,6 @@ textarea {
 	}
 }
 
-input[type="text"], input[type="email"] {
-	height: 40px;
-	padding-left: 10px;
-	font-size: 1em !important;
-}
-
-textarea {
-	height: 150px;
-	padding-left: 10px;
-	font-size: 1em !important;
-	font-family: $alpha-font-family;
-}
 
 // Placeholders
 
@@ -107,33 +95,30 @@ textarea {
 //
 
 .cta-button {
-	cursor: pointer;
-	background-color: $beta-ui-color;
-	font-size: 1em;
-	color: $gamma-ui-color;
-	font-weight: $gamma-font-weight;
-	border: 0;
-	margin-top: 1px;
-	height:38px;
-	line-height: 20px;
-	@include px-padding-lr(2,2);
-	@include padding-tb(.4,.4);
-	border: 1px solid transparent;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
+    font-family: $beta-font-family;
+    background-color: $beta-ui-color;
+    color: $delta-text-color;
+    font-weight: $beta-font-weight;
+    cursor: pointer;
+    border-radius: 30px;
+    border: 0;
+    @include px-padding-lr(4,4);
+    @include padding-tb(.5,.55);
+    border: 1px solid transparent;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
 }
 
 	
  
 
 .cta-button:hover {
-  background-color: #ffffff;
-  color: $beta-ui-color;
-  border-color: $beta-ui-color;
+  background-color: transparent;
+    color: $beta-ui-color;
+	border-color: $beta-ui-color;
 }
-
-
 
 
 

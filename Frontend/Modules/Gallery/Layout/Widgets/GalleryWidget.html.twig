@@ -1,0 +1,16 @@
+ {% if gallery %}
+        
+            
+      <div id="demo">
+        <div id="owl-demo" class="owl-carousel">
+                {% for gallery in gallery %}        
+                   
+                   <div class="item">
+                      <img src="http://{{ SITE_DOMAIN }}/src/Frontend/Files/Gallery/image/800x800/{{ gallery.img }}" alt="Touch">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endif %}
+    
+       

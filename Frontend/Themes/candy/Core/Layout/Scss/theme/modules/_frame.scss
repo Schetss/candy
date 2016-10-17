@@ -2,9 +2,6 @@
 // Header
 //
 
-#topWrapper {
-	height: 100%;
-}
 
 #header {
   	z-index: 99;
@@ -13,7 +10,6 @@
 	width: 100%;
 	@include px-padding-lr(4,4);
 	@include padding-tb(1,1);
-
 }
 
 #logo {
@@ -39,6 +35,11 @@
     bottom: 0;
 }
 
+.fading-line {
+ 	border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(230, 231, 232, 0), rgba(230, 231, 232, 0.75), rgba(230, 231, 232, 0));
+}
 
 // .header-holder, .header-top, .hreader-main, .header-nav {
 // 	width: 100%;
@@ -214,127 +215,207 @@
 	height: 100%;
 }
 
+#topWrapper {
 
-.block {
-	@include margin-tb(.5,1);
 }
 
-.block2 {
-	@include margin-tb(2.5,0)
+#bottomWrapper {
+	@include margin-tb(1,0);
 }
 
-.block3 {
-	@include margin-tb(1,1);
-}
-
-.block4 {
-	@include margin-tb(1.5,1);
-}
-
-.block-title {
-	text-align: center;
-
-
-	h1 {
-		color: $delta-text-color;
-		text-transform: uppercase;
-		font-size: 1.728em;
-		// color: $beta-text-color;
-	}
-
+.text-block {
 	p {
-		padding-top: 0;
-		font-size: 1.2em;
-		color: $beta-text-color;
+		color: lighten($alpha-text-color, 35);
 	}
 }
 
 
-.content-block-2-3 {
-	.editor-block {
-
-		p {
-			line-height: 1.8em;
-		}
-
-		h3, h4 {
-			color: $alpha-ui-color;
-		}
-		@extend %underlineBlue;
-		
-		a, a:hover, a:visited, a:active {
-			color: $beta-ui-color;
-		}
-
-		img {
-			width: 80%;
-			margin-left: 10%;
-			@include margin-tb(.5,.5);
-		}
-
-		ul {
-			list-style-type: none;
-
-			li::before {
-				content: "";
-				background: url('../img/arrow-blue.svg') no-repeat;
-				display: block;
-				float: left;
-				height: .5em;
-				width: .5em;
-				margin-top: 9px;
-				margin-right: .5em;
-			}
-
-
-			li {
-				margin-bottom: .4em;
-				@extend %clearfix;
-			}
-		}
-	
-		table {
-			border-collapse: collapse;
-			border-spacing: 0; 
-		  	color: $alpha-text-color;
-		  	font-size: 1em;
-			@include margin-tb(.5,.5); 
-		  	width: 100%; 
-		}
-
-		table, th, td {
-			text-align: left;
-			border-bottom: 1px solid $line-color;
-			border-collapse: collapse;
-		}
-
-		tbody {
-			border-top: 1px solid $line-color;
-			
-			tr {
-				td:first-child {
-					font-weight: $gamma-font-weight;
-				}
-			}
-		}
-
-		tbody td, th{
-			@include padding-tb(.3,.3);
-			@include px-padding-lr(2,2);
-		}
-
-		tbody tr:hover {
-			background-color: lighten($line-color, 10); 
-		}
-
-	}
+.title-block {
+	@include margin-tb(3.5,3);
 }
+
+
+
 
 
  
 
 //
 // Footer
+//
+
+#footer {
+
+}
+
+// #copy {
+// 	width: 50%;
+// 	float: left;
+// 	font-family: $beta-font-family;
+// 	padding-left: 1em;
+// 	color: $beta-text-color;
+// 	font-size: .9em;
+// }
+
+.footerMiddle {
+	@include margin-tb(0,2);
+	text-align: center;
+	color: lighten($alpha-text-color,30);
+	font-family: $beta-font-family;
+	font-size: .9em;
+	font-weight: $beta-font-weight;
+	text-transform: uppercase;
+
+	a:first-child {
+		margin-right: 20px;
+	}
+
+	a:last-child {
+		margin-left: 20px;
+	}
+
+	a {
+		position: relative;
+	    font-family: $beta-font-family;
+	    background-color: $alpha-ui-color;
+	    color: $delta-text-color;
+	    font-weight: $beta-font-weight;
+	    cursor: pointer;
+	    border-radius: 30px;
+	    border: 0;
+	    @include px-padding-lr(5,2);
+	    @include padding-tb(.5,.55);
+	    border: 1px solid transparent;
+	    -webkit-transition: all 0.3s ease-in-out;
+	    -moz-transition: all 0.3s ease-in-out;
+	    transition: all 0.3s ease-in-out;
+	    text-transform: lowercase;
+	    font-size: .9em;
+
+	    .tel-icon {
+	    	fill: $delta-text-color;
+			width: 20px;
+		    height: 20px;
+		    position: absolute;
+		    top: 0;
+		    margin-top: 7px;
+		    left: 0;
+		    margin-left: 20px;
+		    -webkit-transition: all .3s ease-in-out;
+		    -moz-transition: all .3s ease-in-out;
+		    transition: all .3s ease-in-out;
+		}
+
+		.mail-icon {
+			fill: $delta-text-color;
+			width: 20px;
+		    height: 20px;
+		     position: absolute;
+		    top: 0;
+		    margin-top: 8px;
+		    left: 0;
+		    margin-left: 20px;
+		    -webkit-transition: all 0.3s ease-in-out;
+		    -moz-transition: all 0.3s ease-in-out;
+		    transition: all 0.3s ease-in-out;
+		}
+	}
+
+	
+ 
+
+	a:hover {
+	  	background-color: transparent;
+    	color: $alpha-ui-color;
+		border-color: $alpha-ui-color;
+		-webkit-transition: all 0.3s ease-in-out;
+		    -moz-transition: all 0.3s ease-in-out;
+		    transition: all 0.3s ease-in-out;
+
+		.tel-icon {
+			fill: $alpha-ui-color;
+			-webkit-transition: all .3s ease-in-out;
+		    -moz-transition: all .3s ease-in-out;
+		    transition: all .3s ease-in-out;
+		}
+
+		.mail-icon {
+			fill: $alpha-ui-color;
+			-webkit-transition: all 0.3s ease-in-out;
+		    -moz-transition: all 0.3s ease-in-out;
+		    transition: all 0.3s ease-in-out;
+		}
+	}
+}
+
+.contact-cta {
+	@include margin-tb(2,5);
+}
+
+.zigzag {
+  	position: relative;
+  	width: 100%;
+ 	@include padding-tb(1,1);	
+ }
+.zigzag:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: -10px;
+	width: 100%;
+	height: 10px;
+}
+
+.signature {
+	background: $alpha-ui-color;
+	text-align: center;
+
+  	img {
+  		width: 200px;
+
+  	}
+}
+
+
+.signature:before {
+	background:
+	linear-gradient(
+		  45deg, transparent 33.333%,
+		  $alpha-ui-color 33.333%,  $alpha-ui-color 66.667%,
+		  transparent 66.667%
+	),
+	linear-gradient(
+		  -45deg, transparent 33.333%,
+		   $alpha-ui-color 33.333%,  $alpha-ui-color 66.667%,
+		  transparent 66.667%
+	);
+	background-size: 20px 40px;
+}
+
+
+
+
+
+// #signature {
+// 	 width: 0; 
+// 	  height: 0; 
+// 	  border-left: 5px solid transparent;
+// 	  border-right: 5px solid transparent;
+	  
+// 	  border-bottom: 10px solid black;
+    
+//     text-align: center;
+
+//     img {
+//     	width: 100px;
+//     }
+
+
+// }
+
+
+//
+// Cookiebar
 //
 
 #cookieBar {
@@ -369,229 +450,3 @@
 		white-space: nowrap;
 	}
 }
-
-.footer-holder {
-	position: relative;
-	overflow: hidden;
-	@include background-opacity($alpha-ui-color, 0.8);
-	color: $gamma-ui-color;
-	@include margin-tb(1.5,0);
-
-	h6 {
-		color: $gamma-ui-color;
-		margin-bottom: 1em;
-	}
-
-	a, a:hover, a:visited, a:active {
-		white-space: nowrap;
-	}
-}
-
-
-.footer-bg {
-	 display:block;
-    -webkit-filter: blur(15px);
-    -moz-filter: blur(15px);
-    -o-filter: blur(15px);
-    -ms-filter: blur(15px);
-    filter: blur(15px);
-    opacity: 0.95;
-
-	z-index: -999;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-
-	img {	
-		max-width: none;
-		width: 100%;
-	}
-
-	
-	
-
-}
-
-
-.footer-holder-end {
-	background-color: $beta-ui-color;
-	@include padding-tb(.1,0);
-	p {
-		font-size: .833em;
-	}
-
-	a {
-		padding-top: .1em;
-	}
-}
-
-.legal {
-	float: left; 
-	@extend %underline;
-
-	@include mq($bp2){
-		float: initial;
-		margin-top: .7em;
-		text-align: center;
-	}
-}
-
-.design {
-	float: right;
-	@extend %underline;
-
-	@include mq($bp2){
-		float: initial;
-		margin-bottom: .7em;
-		text-align: center;
-	}
-}
-
-
-//
-// Mailchimp
-//
-
-
-.subscribe-wrapper {
-		border-bottom: 2px solid $gamma-ui-color;
-}
-
-.mailchimp-subscribe {
-	h5 {
-		color: $gamma-ui-color; 
-		text-align: center;
-	}
-
-	.subscribe-sm {
-		img {
-			height: 30px;
-			opacity: 1;
-			-webkit-transition: .5s; 
-		 	transition: .5s;
-		}
-
-		img:hover {
-			opacity: .65;
-			-webkit-transition: .5s; 
-		 	transition: .5s;
-		}
-	}
-}
-
-
-.subscribe-email {
-	margin-left: 26%;
-	width: 30%;
-	display: block;
-	float: left;
-	border: 0;
-}
-
-
-.subscribe-button {
-	float: left;
-	transition: 0.2s;
-	-webkit-transition: 0.2s;
-
-
-	overflow: visible;
-	position: relative;
-	padding-right: 30px;
-	display: block;
-	cursor: pointer;
-	background-color: $beta-ui-color;
-	font-size: 1.2em;
-	color: $gamma-ui-color;
-	font-weight: $gamma-font-weight;
-	border: 0;
-	width: 18%;
-	height: 40px;
-	line-height: 20px;
-
-	p {
-		padding: 0;
-		padding-left: 10px;
-		text-align: left;
-	}
-
-  
-  &:hover {
-    background-color: lighten($beta-ui-color, 5);
-    
-    svg {
-      transform: rotate(10deg);
-      transition: transform .15s;
-    }
-  }
-  
-  svg {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    height: 28px;
-    width: auto;
-    transition: transform .15s;
-    
-    path {
-      fill: $gamma-ui-color;
-    }
-  }
-  
-  &.mailchimp-clicked {
-    background-color: $alpha-ui-color;
-    color: $gamma-ui-color;
-    padding-right: 6px;
-    animation: bounce-in .3s;
-    cursor: default;
-
-    p {
-    	text-align: center;
-    }
-
-    svg {
-      animation: flyaway 1.3s linear;
-      top: -80px;
-      right: -1000px;
-      
-      path {
-        fill: $gamma-ui-color;
-      }
-    }
-  }
-}
-
-@keyframes flyaway {
-  0%   { transform: rotate(10deg);
-         top: 13px;
-         right: 25px;
-         height: 30px; }
-  5%   { transform: rotate(10deg);
-         top: 13px;
-         right: 0px;
-         height: 30px; }
-  20%   { transform: rotate(-20deg);
-          top: 13px;
-          right: -130px;
-          height: 45px; }  
-  40%   { transform: rotate(10deg);
-          top: -40px;
-          right: -280px;
-          opacity: 1; }
-  100% { transform: rotate(60deg);
-         top: -200px;
-         right: -1000px;
-         height: 0;
-         opacity: 0; }
-}
-
-@keyframes bounce-in {
-  0% { padding-right: 30px; }
-  40% { padding-right: 6px; }
-  50% { padding-left: 30px; }
-  100% { padding-left: 6px; }
-}
-
-
-
