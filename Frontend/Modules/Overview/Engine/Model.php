@@ -136,7 +136,8 @@ class Model
         $return = (array) FrontendModel::get('database')->getRecords(
             'SELECT id, title AS title, subtitle as subtitle, image as img, content as content, linkurl as url, additionalfile as pdf
              FROM overview
-             ORDER BY sequence ASC',
+             ORDER BY sequence ASC
+             ',
             array(),
             'id'
         );

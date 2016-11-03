@@ -2307,7 +2307,7 @@
         <translation language="pl"><![CDATA[E-mail poprzez formularz kontaktowy.]]></translation>
       </item>
       <item type="message" name="CookiesWarning">
-        <translation language="nl"><![CDATA[Om de gebruikerservaring van deze site te verbeteren gebruikt deze website <a href="/disclaimer">cookies</a>.]]></translation>
+        <translation language="nl"><![CDATA[Om de gebruikerservaring van deze site te verbeteren gebruikt deze website cookies.]]></translation>
         <translation language="en"><![CDATA[To improve the user experience on this site we use <a href="/disclaimer">cookies</a>.]]></translation>
         <translation language="fr"><![CDATA[Pour améliorer l'expérience utilisateur sur ce site, nous utilisons des <a href="/disclaimer">cookies</a>.]]></translation>
         <translation language="de"><![CDATA[Wir verwenden <a href="/disclaimer">Cookies</a> um Ihr Benutzer-Erlebnis zu verbessern.]]></translation>

@@ -7,7 +7,6 @@
 //
 
 .maps-holder{
-	position: relative;
 }
 
 .parseMap {
@@ -18,6 +17,7 @@
 .parseMapDisplay {
 	z-index: -99999;
 }
+
 
 .maps-overlay {
    background:transparent; 
@@ -31,12 +31,16 @@
 .gm-style-iw {
 	width: 400px;
 	color: lighten($alpha-text-color,30);
-
+	margin-left: 10px;
 
 	img {
 		margin-top: 15px;
 		@include px-margin-lr(0,2);
 	}
+
+	 address {
+	 	font-size: 1.2em;
+	 }
 
 	
 	
@@ -53,6 +57,9 @@
 		color: darken($alpha-ui-color,60);
 	}
 }
+
+
+
 
 //
 // Form
@@ -88,6 +95,11 @@ form {
 
 	textarea {
 		height: 140px;
+		padding-top: 25px;
+	}
+
+	input[type="text"] {
+		border-top: 1px solid lighten($alpha-text-color, 80);
 	}
 
 	input[type="email"] {

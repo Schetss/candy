@@ -2,17 +2,69 @@
 // Overview Widget
 //
 
-.overview {
-
+.owl-wrapper-outer {
+	@include margin-tb(0,2);
 }
 
-.overview-holder {
-	width: 100%;
-	display: flex;
-	 .grid-item {
-	 	flex: 1;
-	 }
+#owl-overview {
+
+	.owl-item {
+		@include px-padding-lr(1,1);
+		
+		.overview-item {
+
+			height: 100%;
+			overflow: hidden;
+			background-color: lighten($delta-text-color,50);
+			// box-shadow: 5px 5px 15px lighten($beta-text-color,55);
+			
+			.overview-item-thumbnail {
+				width: 100%;
+			}
+
+			h4, p {
+				@include px-padding-lr(3,3);
+				text-align: center;
+			}
+
+			p {
+				// font-size: .9em;
+			 	color: lighten($alpha-text-color, 35);
+			}
+
+			.overview-item-top {
+				position: relative;
+			}
+
+			.overview-item-bottom {
+				@include padding-tb(2,1);
+			}
+
+			.overview-subtitle {
+				text-align: center;
+				color: $alpha-ui-color;
+				font-family: $beta-font-family; 
+				font-size: .9em;
+				@include padding-tb(.5,1.5);
+			}
+		}
+	}
 }
+
+.grid {
+	.overview-item:nth-child(4){
+		clear:left;
+	}
+}
+
+
+// .overview-holder {
+// 	width: 100%;
+// 	display: flex;
+// 	 .grid-item {
+// 	 	flex: 1;
+// 	 }
+// }
 
 .overview-item-cta {
 	position: absolute;
@@ -55,11 +107,17 @@
     transition: all 0.3s ease-in-out;
 }
 
+.grid33 {
+	.grid-item:nth-child(4), .grid-item:nth-child(5), .grid-item:nth-child(6) {
+		display: none;
+	}
+}
+
 .overview-item {
 	height: 100%;
 	overflow: hidden;
 	background-color: lighten($delta-text-color,50);
-	box-shadow: 5px 5px 15px lighten($beta-text-color,55);
+	// box-shadow: 5px 5px 15px lighten($beta-text-color,55);
 
 	.overview-item-thumbnail {
 		width: 100%;

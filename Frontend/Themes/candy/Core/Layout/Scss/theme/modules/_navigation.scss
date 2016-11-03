@@ -119,6 +119,7 @@
 
 	.main-nav-text {
 
+
 		a, a:visited {
 			color: $delta-text-color;
 			@include padding-tb(.22,.2);
@@ -127,14 +128,25 @@
 			-moz-transition: all 0.3s ease-in-out;
 			transition: all 0.3s ease-in-out;
 			border-radius: $radius;
+			position: relative;
+			border: 2px solid transparent;
 		}
 
-		a:hover, a:active, .selected a {
-			background-color: $beta-ui-color;
+
+
+		a:hover, .selected a {
+			// background-color: $beta-ui-color;
 			-webkit-transition: all 0.3s ease-in-out;
 			-moz-transition: all 0.3s ease-in-out;
 			transition: all 0.3s ease-in-out;
+			border: 2px solid $delta-text-color;
 		}
+
+		a:active {
+			@include background-opacity($delta-text-color,.1);
+		}
+
+
 	}
 
 	.main-nav-text:nth-child(3) {

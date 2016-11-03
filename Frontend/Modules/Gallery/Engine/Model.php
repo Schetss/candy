@@ -134,7 +134,7 @@ class Model
     public static function getAllItems()
     {
         $return = (array) FrontendModel::get('database')->getRecords(
-            'SELECT id, title AS title, image as img, content as content
+            'SELECT id, title AS title, image as img, content as content, sequence as sequence
              FROM gallery
              ORDER BY sequence ASC',
             array(),
@@ -151,12 +151,13 @@ class Model
         return $return;
     }
 
-    /**
+     /**
      * Fetches a certain category
      *
      * @param string $URL
      * @return array
      */
+
     public static function getCategory($URL)
     {
         $item = (array) FrontendModel::get('database')->getRecord(
