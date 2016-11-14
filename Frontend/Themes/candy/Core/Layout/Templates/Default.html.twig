@@ -1,108 +1,79 @@
 {% include "Core/Layout/Templates/Head.html.twig" %}
 
 <body class="{{ LANGUAGE }}" itemscope itemtype="http://schema.org/WebPage">
+  
 {% include "Core/Layout/Templates/Cookies.html.twig" %}
 
-<div id="topWrapper">
-  <header id="header">
+
+
+  {# HEADER #}
+
+  <header id="header" class="headerStart" {% if page.data.image %}style="background-image:url({{ FRONTEND_FILES_URL~'/pages/images/source/'~page.data.image }})" {% endif %}>
     <div class="container">
 
       {# Logo #}
       <div id="logo">
-        <h2><a href="/">{{ siteTitle }}</a></h2>
-      </div>
-
-      {# Skip link #}
-      <div id="skip">
-        <p><a href="#main">{{ 'lbl.SkipToContent'|trans|ucfirst }}</a></p>
+        <a href="/"><img src="{{ SITE_URL }}/src/Frontend/Themes/candy/Core/Layout/images/logo.svg" alt="{{ siteTitle }}"></a>
       </div>
 
       {# Navigation #}
-      <nav id="headerNavigation">
-        <h4>{{ 'lbl.MainNavigation'|trans|ucfirst }}</h4>
+      <nav id="main-nav">
         {{ getnavigation('page', 0, 1) }}
       </nav>
 
-      {# Language #}
-      <nav id="headerLanguage">
-        <h4>{{ 'lbl.Language'|trans|ucfirst }}</h4>
-        {% include "Core/Layout/Templates/Languages.html.twig" %}
-      </nav>
-
-      {# Top positions #}
-      {% for top in positions.top %}
-        {% if top.html %}
-          {{ top.html|raw }}
-        {% endif %}
-      {% endfor %}
-
-      {# Breadcrumb #}
-      <div id="breadcrumb">
-        <h4>{{ 'lbl.Breadcrumb'|trans|ucfirst }}</h4>
-        {% include "Core/Layout/Templates/Breadcrumb.html.twig" %}
-      </div>
-
-      {# Advertisement positions #}
-      {% for advertisement in positions.advertisement %}
-        {% if advertisement.html %}
-          <div id="headerAd">
-            {{ advertisement.html|raw }}
-          </div>
-        {% endif %}
-      {% endfor %}
     </div>
 
   </header>
-  <div id="main">
-    <div class="container">
 
-      {# Left column #}
-      <div class="col col-3">
 
-        {# Subnavigation #}
-        <nav class="sideNavigation">
-          <h4>{{ 'lbl.Subnavigation'|trans|ucfirst }}</h4>
-          {{ getsubnavigation('page', page.id, 2) }}
-        </nav>
+  {# MAIN CONTENT #}
 
-        {# Left positions #}
-        {% for left in positions.left %}
-          {% if left.html %}
-            <section class="mod">
-              <div class="inner">
-                <div class="bd content">
-                  {{ left.html|raw }}
-                </div>
-              </div>
-            </section>
-          {% endif %}
-        {% endfor %}
+ 
 
-      </div>
-
-      {# Main column #}
-      <div class="col col-9 lastCol">
-
-        {# Page title #}
-        {% if not hideContentTitle %}
-          <header class="mainTitle">
-            <h1>{{ page.title|raw }}</h1>
-          </header>
-        {% endif %}
-
-        {# Main positions #}
-        {% for main in positions.main %}
-          {% if main.html %}
-            <section class="mod">
-              <div class="inner">
-                <div class="bd content">
-                  {{ main.html|raw }}
-                </div>
-              </div>
-            </section>
+    {# Header #}  
+    <div class="default-header">
+      <div class="default-header-image">
+        {% for HeaderImage in positions.HeaderImage %}
+          {% if HeaderImage.html %}
+            {{ HeaderImage.html|raw }}
           {% endif %}
         {% endfor %}
       </div>
+      <div class="default-header-overlay">
+      </div>
+      <div class="default-header-text">
+        {% for Header in positions.Header %}
+          {% if Header.html %}
+            {{ Header.html|raw }}
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <hr class="bottom-line bottom-line-bottom">
+    </div>
+    
+  <div id="topWrapper">
+    <div id="main">
+      <div class="container">
+
+        {# Main column #} 
+        <div class="container-inner">
+          <div class="grid">
+            <div class="grid-item grid-l-1-1 title-block">
+             
+                {# Main #} 
+                {% for Main in positions.Main %}
+                  {% if Main.html %}
+                    {{ Main.html|raw }}
+                  {% endif %}
+                {% endfor %}
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="clear"></div>
     </div>
   </div>
   <noscript>
@@ -111,7 +82,11 @@
       <p>{{ 'msg.EnableJavascript'|trans }}</p>
     </div>
   </noscript>
-</div>
+
+
+
+{# FOOTER #}
+
 <div id="bottomWrapper">
   {% include "Core/Layout/Templates/Footer.html.twig" %}
 </div>
@@ -121,8 +96,15 @@
   <script src="{{ js.file }}"></script>
 {% endfor %}
 
+{# Google Maps API #}
+{# <script src="http://maps.google.com/maps/api/js?key=AIzaSyBmuTqgpBYljazmex9jnkDU4QgJ4oHZmJE" type="text/javascript"></script>
+ #}
 {# Theme specific Javascript #}
-<script src="{{ THEME_URL }}/Core/Js/triton.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="{{ THEME_URL }}/Core/Js/min/parallax-min.js"></script>
+<script src="{{ THEME_URL }}/Core/Js/min/jquery.scrollto-min.js"></script>
+<script src="{{ THEME_URL }}/Core/Js/min/slider-min.js"></script>
+<script src="{{ THEME_URL }}/Core/Js/min/theme-min.js"></script>
 
 {# Site wide HTML #}
 {{ siteHTMLFooter|raw }}

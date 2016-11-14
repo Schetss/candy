@@ -29,7 +29,18 @@
 
 
 .carousel-img {
+    img {
+      opacity: 0;
+    }
 
+  .loaded {
+    img {
+      opacity: 1;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+  }
 }
 
 .carousel-text {
@@ -53,7 +64,7 @@
   }
 
   a {
-    font-size: .65em;
+    font-size: .75em;
     font-family: $beta-font-family;
     background-color: $beta-ui-color;
     color: $delta-text-color;

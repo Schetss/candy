@@ -3,8 +3,8 @@
         <div class="carousel-item">
           <div class="carousel-img">
             <ul id="scene">
-              <li class="layer" data-depth="0.30"><img src="http://{{ SITE_DOMAIN }}/src/Frontend/Files/Carousel/main_image/3000x2500/{{ carousel.mainimg }}" alt="{{ carousel.title }}"></li>
-              <li class="layer" data-depth="0.00"><img src="http://{{ SITE_DOMAIN }}/src/Frontend/Files/Carousel/parallax_image/3000x2500/{{ carousel.parallaximg }}"></li>
+              <li class="layer" data-depth="0.30"><img src="http://{{ SITE_DOMAIN }}/src/Frontend/Files/Carousel/main_image/3000x2500/{{ carousel.mainimg }}" onload="imgLoaded(this)" alt="{{ carousel.title }}"></li>
+              <li class="layer" data-depth="0.00"><img src="http://{{ SITE_DOMAIN }}/src/Frontend/Files/Carousel/parallax_image/3000x2500/{{ carousel.parallaximg }}" onload="imgLoaded(this)"></li>
              
             </ul>
             <div class="carousel-overlay">

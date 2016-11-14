@@ -4,7 +4,7 @@
             {% for gallery in gallery %}        
                
                	<div class="item" data-sequence="{{ gallery.sequence }}">
-                  	<img src="http://{{ SITE_DOMAIN }}/src/Frontend/Files/Gallery/image/800x800/{{ gallery.img }}" alt="{{ gallery.title }}">
+                  	<img src="http://{{ SITE_DOMAIN }}/src/Frontend/Files/Gallery/image/800x800/{{ gallery.img }}" onload="imgLoaded(this)" alt="{{ gallery.title }}">
             		 <div class="gallery-item-overlay">
 	                	<svg class="gallery-plus" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 600" style="enable-background:new 0 0 600 600;" xml:space="preserve">
 						<line class="st0" x1="300" y1="2.2" x2="300" y2="597.8"/>

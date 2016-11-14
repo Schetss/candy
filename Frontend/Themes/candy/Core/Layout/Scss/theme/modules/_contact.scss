@@ -132,7 +132,26 @@ form {
 		font-size: .9em;
 	}
 
-
 }
 
+
+// Succesmessage
+
+.formSucces {
+	@include margin-tb(2,1.5);
+	text-align: center;
+	font-family: $beta-font-family;
+
+	p {
+		padding-top: 1em;
+		color: lighten($alpha-text-color,30);
+	}
+}
+
+
+#checkForm {
+	fill:#7FD67F;
+	width: 100px;
+	@include margin-tb(0,1);
+}
 

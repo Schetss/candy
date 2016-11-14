@@ -5,7 +5,6 @@
 {% include "Core/Layout/Templates/Cookies.html.twig" %}
 
 
-
   {# HEADER #}
 
   <header id="header" class="headerStart" {% if page.data.image %}style="background-image:url({{ FRONTEND_FILES_URL~'/pages/images/source/'~page.data.image }})" {% endif %}>
@@ -28,9 +27,10 @@
 
   {# MAIN CONTENT #}
 
+  
 
 
-    {# Carousel #}  
+   {# Carousel #}  
     <div id="carousel">
       {% for Carousel in positions.Carousel %}
         {% if Carousel.html %}
@@ -42,6 +42,18 @@
   <div id="topWrapper">
     <div id="main">
       <div class="container">
+
+         {# Alert #}  
+         
+            {% for Alert in positions.Alert %}
+              {% if Alert.html %}
+                <div id="notification">
+                  {{ Alert.html|raw }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          
+
 
         {# Main column #} 
         <div class="container-inner">
@@ -102,10 +114,10 @@
 
 
         <div class="container-inner">
-          <div class="grid overview">
+          <div class="grid imageblock">
             <div class="grid-item grid-l-1-1 title-block">
-              <div class="menu-tag" id="onsteam">
-                <p>Ons team</p>
+              <div class="menu-tag" id="realisaties">
+                <p>Realisaties</p>
               </div>
             
               {# Titel 2 #} 
@@ -125,14 +137,13 @@
             {% endfor %}
 
 
-
-          <div class="grid">
+          <div class="grid overview">
             <div class="grid-item grid-l-1-1 title-block">
-              <div class="menu-tag" id="contact">
-                <p>Contact</p>
+              <div class="menu-tag" id="onsteam">
+                <p>Ons team</p>
               </div>
-              
-              {# Titel 3 #}
+            
+              {# Titel 3 #} 
               {% for Titel3 in positions.Titel3 %}
                 {% if Titel3.html %}
                   {{ Titel3.html|raw }}
@@ -140,12 +151,36 @@
               {% endfor %}
             </div>
           </div>
+                    
+            {# Content 3 #} 
+            {% for Content3 in positions.Content3 %}
+              {% if Content3.html %}
+                {{ Content3.html|raw }}
+              {% endif %}
+            {% endfor %}
+
+
+
+          <div class="grid">
+            <div class="grid-item grid-l-1-1 title-block">
+              <div class="menu-tag" id="contact">
+                <p>Contact</p>
+              </div>
+              
+              {# Titel 4 #}
+              {% for Titel4 in positions.Titel4 %}
+                {% if Titel4.html %}
+                  {{ Titel4.html|raw }}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
         </div>
        
-        {# Content 3 #} 
-        {% for Content3 in positions.Content3 %}
-          {% if Content3.html %}
-            {{ Content3.html|raw }}
+        {# Content 4 #} 
+        {% for Content4 in positions.Content4 %}
+          {% if Content4.html %}
+            {{ Content4.html|raw }}
           {% endif %}
         {% endfor %}
 
@@ -164,24 +199,8 @@
 
 {# FOOTER #}
 
-<div id="bottomWrapper">
+
   {% include "Core/Layout/Templates/Footer.html.twig" %}
-</div>
-
-{# General Javascript #}
-{% for js in jsFiles %}
-  <script src="{{ js.file }}"></script>
-{% endfor %}
-
-{# Google Maps API #}
-{# <script src="http://maps.google.com/maps/api/js?key=AIzaSyBmuTqgpBYljazmex9jnkDU4QgJ4oHZmJE" type="text/javascript"></script>
- #}
-{# Theme specific Javascript #}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="{{ THEME_URL }}/Core/Js/min/parallax-min.js"></script>
-<script src="{{ THEME_URL }}/Core/Js/min/jquery.scrollto-min.js"></script>
-<script src="{{ THEME_URL }}/Core/Js/min/slider-min.js"></script>
-<script src="{{ THEME_URL }}/Core/Js/min/theme-min.js"></script>
 
 {# Site wide HTML #}
 {{ siteHTMLFooter|raw }}

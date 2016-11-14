@@ -5,6 +5,19 @@
 #gallery {
     @include margin-tb(2,0);
 
+ 	img {
+	  opacity: 0;
+	}
+
+	.loaded {
+		img {
+		  opacity: 1;
+		  -webkit-transition: all 0.3s ease-in-out;
+		  -moz-transition: all 0.3s ease-in-out;
+		  transition: all 0.3s ease-in-out;
+		}
+	}
+
     .item {
     	position: relative;
     	cursor: pointer;

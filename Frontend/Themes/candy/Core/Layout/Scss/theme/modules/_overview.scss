@@ -8,6 +8,19 @@
 
 #owl-overview {
 
+	img {
+		opacity: 0;
+	}
+
+	.loaded {
+		img {
+			opacity: 1;
+			 -webkit-transition: all 0.3s ease-in-out;
+		      -moz-transition: all 0.3s ease-in-out;
+		      transition: all 0.3s ease-in-out;
+		}
+	}
+
 	.owl-item {
 		@include px-padding-lr(1,1);
 		

@@ -5,7 +5,7 @@
                 {% for overview in overview %}        
                    <div class="item overview-item">
                         <div class="overview-item-top">
-                            <img class="overview-item-thumbnail" alt="{{ overview.title }}" src="http://{{ SITE_DOMAIN }}/src/Frontend/Files/Overview/image/800x800/{{ overview.img }}">
+                            <img class="overview-item-thumbnail" alt="{{ overview.title }}" src="http://{{ SITE_DOMAIN }}/src/Frontend/Files/Overview/image/800x800/{{ overview.img }}" onload="imgLoaded(this)">
                             <div class="overview-item-cta">
                                 <a href="mailto:{{ overview.url }}"><img alt="mail" src="http://{{ SITE_DOMAIN }}/src/Frontend/Themes/candy/Core/Layout/images/mail.svg"></a>
                             </div>
