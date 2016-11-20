@@ -106,6 +106,13 @@
 	img {
 		height: 100%;
 		max-height: none;
+
+		@include mq($bp4){
+			height: auto;
+			max-height: auto;
+			width: 100%;
+			max-width: none;
+		}
 	}
 
 	h3 {
@@ -212,6 +219,7 @@
 	-webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    z-index: 99999;
 }
 
 .imageblock-overlay-left {

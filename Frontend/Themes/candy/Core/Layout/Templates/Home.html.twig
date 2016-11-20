@@ -24,112 +24,117 @@
 
   </header>
 
-
   {# MAIN CONTENT #}
 
-  
+   {# Carousel #}
 
-
-   {# Carousel #}  
-    <div id="carousel">
-      {% for Carousel in positions.Carousel %}
-        {% if Carousel.html %}
+    {% for Carousel in positions.Carousel %}
+      {% if Carousel.html %}
+        <div id="carousel">
           {{ Carousel.html|raw }}
-        {% endif %}
-      {% endfor %}
-    </div>
-    
-  <div id="topWrapper">
-    <div id="main">
-      <div class="container">
+        </div>
+      {% endif %}
+    {% endfor %}
+   
 
-         {# Alert #}  
+    {# Content #}
+    
+    <div id="topWrapper">
+      <div id="main">
+        <div class="container">
+
+          {# Alert #}  
          
-            {% for Alert in positions.Alert %}
-              {% if Alert.html %}
-                <div id="notification">
-                  {{ Alert.html|raw }}
+          {% for Alert in positions.Alert %}
+            {% if Alert.html %}
+              <div id="notification">
+                {{ Alert.html|raw }}
+              </div>
+            {% endif %}
+          {% endfor %}
+        
+
+        {# Main column #} 
+
+          {# BLOCK 1 #}
+        
+          <div class="container-inner">
+
+            {# Titel 1 #} 
+
+            <div class="grid">
+              <div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-1 grid-l-1-1 title-block">
+                <div class="menu-tag" id="overons">
+                  <p>Over ons</p>
                 </div>
-              {% endif %}
-            {% endfor %}
+                {% for Titel1 in positions.Titel1 %}
+                  {% if Titel1.html %}
+                    {{ Titel1.html|raw }}
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+
+            {# Intro 1 #}
+
+            <div class="grid text-block">
+              <div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-3 grid-l-1-3"> 
+                {% for Intro1 in positions.Intro1 %}
+                  {% if Intro1.html %}
+                    {{ Intro1.html|raw }}
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-3 grid-l-1-3"> 
+                {% for Intro2 in positions.Intro2 %}
+                  {% if Intro2.html %}
+                    {{ Intro2.html|raw }}
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-3 grid-l-1-3"> 
+                {% for Intro3 in positions.Intro3 %}
+                  {% if Intro3.html %}
+                    {{ Intro3.html|raw }}
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          {# Content 1 #}
+
+          {% for Content1 in positions.Content1 %}
+            {% if Content1.html %}
+              <div id="gallery">
+                {{ Content1.html|raw }}
+              </div>
+            {% endif %}
+          {% endfor %}
           
 
 
-        {# Main column #} 
-        <div class="container-inner">
-          <div class="grid">
-            <div class="grid-item grid-l-1-1 title-block">
-              <div class="menu-tag" id="overons">
-                <p>Over ons</p>
+          {# BLOCK 2 - 3 - 4 #}
+
+          <div class="container-inner">
+
+            {# Titel 2 #} 
+
+            <div class="grid">
+              <div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-1 grid-l-1-1 title-block">
+                <div class="menu-tag" id="realisaties">
+                  <p>Realisaties</p>
+                </div>
+                {% for Titel2 in positions.Titel2 %}
+                  {% if Titel2.html %}
+                    {{ Titel2.html|raw }}
+                  {% endif %}
+                {% endfor %}
               </div>
-              
-              {# Titel 1 #} 
-              {% for Titel1 in positions.Titel1 %}
-                {% if Titel1.html %}
-                  {{ Titel1.html|raw }}
-                {% endif %}
-              {% endfor %}
-
             </div>
-          </div>
-
-          <div class="grid text-block">
-            <div class="grid-item grid-l-1-3"> 
-              {# Intro 1 #} 
-              {% for Intro1 in positions.Intro1 %}
-                {% if Intro1.html %}
-                  {{ Intro1.html|raw }}
-                {% endif %}
-              {% endfor %}
-            </div>
-            <div class="grid-item grid-l-1-3"> 
-              {# Intro 2 #} 
-              {% for Intro2 in positions.Intro2 %}
-                {% if Intro2.html %}
-                  {{ Intro2.html|raw }}
-                {% endif %}
-              {% endfor %}
-            </div>
-            <div class="grid-item grid-l-1-3"> 
-              {# Intro 3 #} 
-              {% for Intro3 in positions.Intro3 %}
-                {% if Intro3.html %}
-                  {{ Intro3.html|raw }}
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-
-
-        <div id="gallery">
-          {# Content 1 #} 
-          {% for Content1 in positions.Content1 %}
-            {% if Content1.html %}
-              {{ Content1.html|raw }}
-            {% endif %}
-          {% endfor %}
-        </div>
-
-
-
-        <div class="container-inner">
-          <div class="grid imageblock">
-            <div class="grid-item grid-l-1-1 title-block">
-              <div class="menu-tag" id="realisaties">
-                <p>Realisaties</p>
-              </div>
-            
-              {# Titel 2 #} 
-              {% for Titel2 in positions.Titel2 %}
-                {% if Titel2.html %}
-                  {{ Titel2.html|raw }}
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-                    
+                      
             {# Content 2 #} 
+          
             {% for Content2 in positions.Content2 %}
               {% if Content2.html %}
                 {{ Content2.html|raw }}
@@ -137,22 +142,23 @@
             {% endfor %}
 
 
-          <div class="grid overview">
-            <div class="grid-item grid-l-1-1 title-block">
-              <div class="menu-tag" id="onsteam">
-                <p>Ons team</p>
+            {# Titel 3 #} 
+
+            <div class="grid">
+              <div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-1 grid-l-1-1 title-block">
+                <div class="menu-tag" id="onsteam">
+                  <p>Ons team</p>
+                </div>
+                {% for Titel3 in positions.Titel3 %}
+                  {% if Titel3.html %}
+                    {{ Titel3.html|raw }}
+                  {% endif %}
+                {% endfor %}
               </div>
-            
-              {# Titel 3 #} 
-              {% for Titel3 in positions.Titel3 %}
-                {% if Titel3.html %}
-                  {{ Titel3.html|raw }}
-                {% endif %}
-              {% endfor %}
             </div>
-          </div>
-                    
+                      
             {# Content 3 #} 
+
             {% for Content3 in positions.Content3 %}
               {% if Content3.html %}
                 {{ Content3.html|raw }}
@@ -160,41 +166,43 @@
             {% endfor %}
 
 
+            {# Titel 4 #} 
 
-          <div class="grid">
-            <div class="grid-item grid-l-1-1 title-block">
-              <div class="menu-tag" id="contact">
-                <p>Contact</p>
+            <div class="grid">
+              <div class="grid-item grid-xs-1-1 grid-s-1-1 grid-m-1-1 grid-l-1-1 title-block">
+                <div class="menu-tag" id="contact">
+                  <p>Contact</p>
+                </div>
+                {% for Titel4 in positions.Titel4 %}
+                  {% if Titel4.html %}
+                    {{ Titel4.html|raw }}
+                  {% endif %}
+                {% endfor %}
               </div>
-              
-              {# Titel 4 #}
-              {% for Titel4 in positions.Titel4 %}
-                {% if Titel4.html %}
-                  {{ Titel4.html|raw }}
-                {% endif %}
-              {% endfor %}
             </div>
           </div>
-        </div>
        
-        {# Content 4 #} 
-        {% for Content4 in positions.Content4 %}
-          {% if Content4.html %}
-            {{ Content4.html|raw }}
-          {% endif %}
-        {% endfor %}
+          {# END CONTAINER !!! #}
 
+          {# Content 4 #} 
+
+          {% for Content4 in positions.Content4 %}
+            {% if Content4.html %}
+              {{ Content4.html|raw }}
+            {% endif %}
+          {% endfor %}
+
+        </div>
+        <div class="clear"></div>
       </div>
-      <div class="clear"></div>
     </div>
-  </div>
-  <noscript>
-    <div class="message notice">
-      <h4>{{ 'lbl.EnableJavascript'|trans|ucfirst }}</h4>
-      <p>{{ 'msg.EnableJavascript'|trans }}</p>
-    </div>
-  </noscript>
-</div>
+    <noscript>
+      <div class="message notice">
+        <h4>{{ 'lbl.EnableJavascript'|trans|ucfirst }}</h4>
+        <p>{{ 'msg.EnableJavascript'|trans }}</p>
+      </div>
+    </noscript>
+ 
 
 
 {# FOOTER #}

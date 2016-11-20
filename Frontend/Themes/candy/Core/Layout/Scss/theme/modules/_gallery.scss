@@ -5,6 +5,7 @@
 #gallery {
     @include margin-tb(2,0);
 
+.demo {
  	img {
 	  opacity: 0;
 	}
@@ -17,7 +18,7 @@
 		  transition: all 0.3s ease-in-out;
 		}
 	}
-
+}
     .item {
     	position: relative;
     	cursor: pointer;
@@ -104,6 +105,7 @@
 	-webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    z-index: 99999;
 }
 
 .gallery-overlay-left {

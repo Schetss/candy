@@ -140,6 +140,9 @@
   @else if $point == $bp6{
     @media (max-width: $bp6)  { @content; }
   }
+  @else if $point == $bp7{
+    @media (max-width: $bp7)  { @content; }
+  }
 }
 
 @mixin omq($point) {
@@ -160,6 +163,27 @@
   }
   @else if $point == $bp6{
     @media (min-width: $bp6)  { @content; }
+  }
+  @else if $point == $bp7{
+    @media (min-width: $bp7)  { @content; }
+  }
+}
+
+@mixin hmq($point) {
+  @if $point == $hbp1 {
+    @media (min-height: $hbp1) { @content; }
+  }
+  @else if $point == $hbp2 {
+    @media (min-height: $hbp2) { @content; }
+  }
+  @else if $point == $hbp3{
+    @media (min-height: $hbp3)  { @content; }
+  }
+  @else if $point == $hbp4{
+    @media (min-height: $hbp4)  { @content; }
+  }
+  @else if $point == $hbp5{
+    @media (min-height: $hbp5)  { @content; }
   }
 }
 
